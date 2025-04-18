@@ -1,223 +1,155 @@
+<!-- Save as index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Interactive Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Mohammed Naveed | Portfolio</title>
+  <!-- Use your existing CSS from the template -->
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      animation: fadeIn 1s ease-in;
-    }
-
-    section {
-      width: 90%;
-      max-width: 1200px;
-      margin-top: 30px;
-    }
-
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 2.5rem;
-      border-radius: 16px;
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.2rem;
-    }
-
-    header p {
-      margin-top: 1rem;
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
-    h2 {
-      color: #4CAF50;
-      margin: 2rem 0 1rem;
-      font-size: 1.5rem;
-      text-align: center;
-    }
-
-    .project-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 0 20px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      color: #333;
-      margin-bottom: 1rem;
-    }
-
-    .card p {
-      color: #666;
-      line-height: 1.6;
-    }
-
-    .card a {
-      display: inline-block;
-      margin-top: 1rem;
-      text-decoration: none;
-      color: #4CAF50;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    .card a:hover {
-      color: #388e3c;
-      text-decoration: underline;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      section {
-        width: 100%;
-      }
-    }
+    /* Use the same CSS styles from your template without change */
   </style>
 </head>
 <body>
+  <!-- Header Section -->
   <header>
-    <h1>Hello, I'm Mohammed Naveed Ul Hasan M Mulla 👋</h1>
-    <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
+    <div class="container header-content">
+      <img src="https://via.placeholder.com/150" alt="Profile Image" class="profile-img">
+      <h1 class="header-title">Mohammed Naveed Ul Hasan M Mulla</h1>
+      <p class="header-subtitle">Aspiring Software Engineer & Tech Enthusiast</p>
+    </div>
   </header>
 
-  <section>
-    <h2>🛠️ Projects</h2>
-    <div class="project-cards">
-      <div class="card">
-        <h3>Intrusion Detection System for 5G Networks</h3>
-        <p>Developed an IDS using stacked LSTMs and attention mechanisms, achieving 94.03% accuracy. The project utilized CatBoost for feature reduction. <em>(Python, PyTorch, CatBoost)</em></p>
-        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <h3>Exercise Robot</h3>
-        <p>Built a robotic fitness demonstrator using Arduino and sensors, enabling real-time control and automation for fitness routines. <em>(Arduino, C++, Sensors)</em></p>
-        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <h3>Smart City Optimization</h3>
-        <p>Implemented urban infrastructure optimization using graph algorithms and data structures to enhance traffic, parking, and emergency systems. <em>(C, Graph Theory, DSA)</em></p>
-        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <h3>Spotify App Clone</h3>
-        <p>Created a C++-based music app clone that supports playlist management, user authentication, and file handling. <em>(C++, OOP)</em></p>
-        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <h3>Interactive Control System</h3>
-        <p>Designed an interactive control system for embedded robotics, using Arduino and sensor-based feedback for real-time robotic demos. <em>(Arduino, Embedded C)</em></p>
-        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <h3>Algorithm Visualization Tools</h3>
-        <p>Developed small tools to visualize sorting and graph algorithms for educational purposes. <em>(C++, DSA, Graph Theory)</em></p>
-        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>Hello! I’m an enthusiastic Computer Science undergrad passionate about software development, AI, and building innovative solutions. I enjoy exploring new technologies and working on impactful projects that solve real-world problems.</p>
+        <p>Currently pursuing my B.E. at KLE Technological University, I’m focused on growing my skills in full-stack development, AI/ML, and embedded systems. Outside tech, I love tinkering with electronics and diving into robotics challenges.</p>
       </div>
     </div>
-
-    <h2>🚀 Skills</h2>
-    <ul>
-      <li>Programming Languages: C, C++, Python, Basic CSS/JS/HTML</li>
-      <li>Frameworks & Libraries: NumPy, Pandas, Matplotlib, PyTorch, Scikit-learn, Seaborn</li>
-      <li>Data Structures and Algorithms</li>
-      <li>Web Development Basics</li>
-    </ul>
-
-    <h2>🏆 Achievements</h2>
-    <ul>
-      <li><strong>First Place:</strong> Exercise Robot at Avinya Shisyaru, KLE Tech. Skills: Arduino Programming, Motion Control.</li>
-    </ul>
-
-    <h2>📚 Publications</h2>
-    <ul>
-      <li><strong>Intrusion Detection in 5G Networks:</strong> Published in CoaCoNS 2025 (Springer CCIS). Focused on attention mechanisms with Gaussian noise augmentation.</li>
-    </ul>
-
-    <h2>🌐 Find Me Online</h2>
-    <ul>
-      <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
-      <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
-    </ul>
-
-    <h2>📘 Portfolio Topic</h2>
-    <dl>
-      <dt>Course Name</dt>
-      <dd>Algorithmic Problem Solving</dd>
-
-      <dt>Course Code</dt>
-      <dd>Course Code Placeholder</dd>
-
-      <dt>Name</dt>
-      <dd>Mohammed Naveed Ul Hasan M Mulla</dd>
-
-      <dt>SRN</dt>
-      <dd>Your SRN</dd>
-
-      <dt>Course Instructor</dt>
-      <dd>Instructor Name Placeholder</dd>
-
-      <dt>University</dt>
-      <dd>KLE Technological University, Hubli</dd>
-
-      <dt>Portfolio Topic/Domain</dt>
-      <dd>Google</dd>
-    </dl>
-
-    <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
   </section>
+
+  <!-- Education Section -->
+  <section id="education" class="education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="education-card">
+        <p class="degree">Bachelor of Engineering - Computer Science and Engineering</p>
+        <p class="school">KLE Technological University, Hubli</p>
+        <p class="edu-date">2022 - 2026</p>
+        <p class="cgpa">CGPA: 8.67 (upto 5th Semester)</p>
+        <p>Focused on software development, algorithms, and applied machine learning. Participated in multiple hackathons, technical symposiums, and research-oriented projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-item">C</div>
+        <div class="skill-item">C++</div>
+        <div class="skill-item">Python</div>
+        <div class="skill-item">HTML</div>
+        <div class="skill-item">CSS</div>
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">NumPy</div>
+        <div class="skill-item">Pandas</div>
+        <div class="skill-item">Matplotlib</div>
+        <div class="skill-item">PyTorch</div>
+        <div class="skill-item">Scikit-learn</div>
+        <div class="skill-item">Seaborn</div>
+        <div class="skill-item">Data Structures</div>
+        <div class="skill-item">OOP</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project Image" class="project-img">
+          <div class="project-content">
+            <h3 class="project-title">Intrusion Detection System for 5G Networks</h3>
+            <p class="project-desc">Stacked LSTMs with attention and CatBoost-based feature selection. Achieved 94.03% accuracy in detecting network intrusions.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">CatBoost</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project Image" class="project-img">
+          <div class="project-content">
+            <h3 class="project-title">Exercise Robot</h3>
+            <p class="project-desc">Arduino-based robot to automate physical movements for fitness routines with interactive controls and pre-defined sequences.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Arduino</span>
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Servo Motors</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project Image" class="project-img">
+          <div class="project-content">
+            <h3 class="project-title">Smart City Project</h3>
+            <p class="project-desc">Used DSA, Graph Theory, and Trees to develop smart traffic and emergency services management algorithms for urban optimization.</p>
+            <div class="project-tech">
+              <span class="tech-tag">C</span>
+              <span class="tech-tag">DSA</span>
+              <span class="tech-tag">Graph Theory</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project Image" class="project-img">
+          <div class="project-content">
+            <h3 class="project-title">Spotify Clone</h3>
+            <p class="project-desc">Built a C++-based music player with playlist management, file handling, and login system simulating a Spotify-like experience.</p>
+            <div class="project-tech">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">OOP</span>
+              <span class="tech-tag">File Handling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Publication -->
+      <div class="education-card" style="margin-top: 3rem;">
+        <h3>Publication</h3>
+        <p><strong>Intrusion Detection in 5G Networks</strong>: Attention with Bias Mechanisms and Gaussian Noise Augmentation for Enhanced Security.</p>
+        <p>Accepted at CoaCoNS 2025 (Springer, CCIS, SCOPUS Indexed).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="#" class="social-icon">in</a>
+        <a href="#" class="social-icon">gh</a>
+        <a href="mailto:mdmnaveed.5@gmail.com" class="social-icon">@</a>
+      </div>
+      <p>mdmnaveed.5@gmail.com | +91-9483061865</p>
+      <p class="copyright">© 2025 Mohammed Naveed. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
