@@ -15,289 +15,502 @@
       --grey: #94A3B8;
       --grey-light: #E2E8F0;
     }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      transition: all 0.3s ease;
     }
+
     html {
       scroll-behavior: smooth;
     }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       background-color: var(--light);
       color: var(--dark);
       line-height: 1.6;
       text-align: center;
     }
+
     .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-    }
-    section {
-      padding: 5rem 0;
-    }
-    h1, h2, h3 {
-      margin-bottom: 1.5rem;
-    }
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    h2 {
-      font-size: 2rem;
-      position: relative;
-      display: inline-block;
-      margin-bottom: 3rem;
-    }
-    h2::after {
-      content: '';
-      position: absolute;
-      width: 60%;
-      height: 3px;
-      background-color: var(--primary);
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    h3 {
-      font-size: 1.5rem;
-    }
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
+      padding: 0 20px;
     }
 
-    header {
-      background-color: var(--primary);
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background: var(--primary);
       color: white;
-      padding: 2rem 0;
     }
 
-    .header-content {
-      z-index: 1;
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 8rem 0 4rem;
+      margin-bottom: 2rem;
       position: relative;
+      overflow: hidden;
     }
 
     .profile-img {
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 5px solid white;
-      margin-bottom: 1rem;
+      border: 4px solid white;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
     }
 
-    .header-title {
-      font-size: 3rem;
+    .profile-img:hover {
+      transform: scale(1.05);
     }
 
-    .header-subtitle {
-      font-size: 1.5rem;
-      opacity: 0.9;
+    /* Sections */
+    section {
+      padding: 5rem 0;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
     }
 
-    .about, .skills, .contact-form-section, .domain-section {
-      background-color: white;
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .education {
-      background-color: var(--grey-light);
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 1rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
-    .about-content, .skills-container, .education-card, .project-card, .domain-card {
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .skill-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      width: var(--progress, 0%);
+      background: var(--primary);
+      transition: width 1s ease;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      padding: 2rem;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Domain Section */
+    .domain-section {
+      background: white;
+      padding: 4rem 0;
+    }
+
+    .domain-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       max-width: 800px;
       margin: 0 auto;
     }
 
-    .education-card {
-      background-color: white;
-      border-radius: 10px;
+    .highlight-box {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .highlight-title {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .idea-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .idea-item {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .idea-item::before {
+      content: "•";
+      color: var(--primary);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
       padding: 2rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      margin: 2rem auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid var(--grey-light);
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .submit-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 0;
+      margin-top: 4rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .social-icon {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate {
+      animation: slideIn 0.6s ease forwards;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 1rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-title {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#domain">Domain</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<header>
-  <div class="container header-content">
-    <img src="https://via.placeholder.com/150" alt="Profile" class="profile-img"/>
-    <h1 class="header-title">Mohammed Naveed Ul Hasan M Mulla</h1>
-    <p class="header-subtitle">Software Engineer & AI Enthusiast</p>
-  </div>
-</header>
-
-<section class="about">
-  <div class="container">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <p>Aspiring software engineer with a focus on AI, full-stack dev, and embedded systems. Skilled in C, C++, Python, PyTorch, and data science libraries. Passionate about using tech to solve real-world problems.</p>
+  <header>
+    <div class="container">
+      <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" alt="Mohammed Naveed" class="profile-img"/>
+      <h1 class="header-title">Mohammed Naveed Ul Hasan M Mulla</h1>
+      <p class="header-subtitle">Software Engineer & AI Enthusiast</p>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="education">
-  <div class="container">
-    <h2>Education</h2>
-    <div class="education-card">
-      <p class="degree">B.Tech. in Computer Science & Engineering</p>
-      <p class="school">KLE Technological University, Hubli</p>
-      <p class="edu-date">Expected Graduation: 2026</p>
-      <p class="cgpa">CGPA: 8.67</p>
-    </div>
-    <div class="education-card">
-      <p class="degree">Pre-University</p>
-      <p class="school">Vidya P. Hanchinmani PU College</p>
-      <p class="edu-date">2020 - 2022</p>
-      <p class="cgpa">87.66%</p>
-    </div>
-    <div class="education-card">
-      <p class="degree">SSLC</p>
-      <p class="school">Pavan English Medium School</p>
-      <p class="edu-date">2020</p>
-      <p class="cgpa">93.76%</p>
-    </div>
-  </div>
-</section>
-<!-- SKILLS -->
-<section class="skills">
-  <div class="container">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill-item">C</div>
-      <div class="skill-item">C++</div>
-      <div class="skill-item">Python</div>
-      <div class="skill-item">HTML</div>
-      <div class="skill-item">CSS</div>
-      <div class="skill-item">JavaScript</div>
-      <div class="skill-item">PyTorch</div>
-      <div class="skill-item">NumPy</div>
-      <div class="skill-item">Pandas</div>
-      <div class="skill-item">Matplotlib</div>
-      <div class="skill-item">Seaborn</div>
-      <div class="skill-item">Scikit-learn</div>
-      <div class="skill-item">Data Structures</div>
-      <div class="skill-item">Arduino</div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="education">
-  <div class="container">
-    <h2>Projects</h2>
-
-    <div class="education-card">
-      <h3>Intrusion Detection for 5G</h3>
-      <p>Used LSTM + Attention and CatBoost for feature selection to detect intrusions in 5G networks with 94.03% accuracy.</p>
-      <p><strong>Tools:</strong> Python, PyTorch, CatBoost</p>
-    </div>
-
-    <div class="education-card">
-      <h3>Exercise Robot</h3>
-      <p>Developed a fitness robot using Arduino and servo motors, controlled via sensors and predefined exercise sequences.</p>
-      <p><strong>Tools:</strong> Arduino, C++, Servo Motors</p>
-    </div>
-
-    <div class="education-card">
-      <h3>Smart City Simulation</h3>
-      <p>Built a city management simulation using C and DSA. Handled smart traffic, parking, grid optimization using graph theory.</p>
-      <p><strong>Tools:</strong> C, Graph Theory, Data Structures</p>
-    </div>
-
-    <div class="education-card">
-      <h3>Spotify Clone</h3>
-      <p>Simulated Spotify app in C++ with login, playlist management, and music playback using file handling techniques.</p>
-      <p><strong>Tools:</strong> C++, OOP, File Handling</p>
-    </div>
-  </div>
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section class="skills">
-  <div class="container">
-    <h2>Achievements</h2>
-    <div class="about-content">
-      <p><strong>🏆 First Place:</strong> Exercise Robot Demonstration Competition @ KLE Tech</p>
-      <p>Skills Applied: Arduino Programming, Motion Control, Team Presentation</p>
-    </div>
-  </div>
-</section>
-
-<!-- DOMAIN SECTION -->
-<section id="domain" class="domain-section">
-  <div class="container">
-    <h2>Chosen Domain</h2>
-    <div class="domain-card">
-      <h3 class="domain-title">🧠 Anthropic</h3>
-
-      <div class="highlight-box">
-        <h4 class="highlight-title">What is Anthropic?</h4>
-        <p>Anthropic is a leading AI safety and research company focused on building reliable, interpretable, and steerable AI systems. Founded in 2021 by former OpenAI employees, it's known for its Claude language models.</p>
-      </div>
-
-      <div class="highlight-box">
-        <h4 class="highlight-title">Key Highlights</h4>
-        <ul class="idea-list">
-          <li class="idea-item">Focus on AI alignment and safety</li>
-          <li class="idea-item">Backed by Amazon ($4B investment) and Google</li>
-          <li class="idea-item">Creator of the Claude AI models</li>
-          <li class="idea-item">Strong emphasis on constitutional AI</li>
-          <li class="idea-item">Competes with OpenAI, Google DeepMind, and Cohere</li>
-        </ul>
-      </div>
-
-      <div class="highlight-box">
-        <h4 class="highlight-title">Technical Skills Required</h4>
-        <ul class="idea-list">
-          <li class="idea-item">Large Language Models (LLMs)</li>
-          <li class="idea-item">Prompt Engineering + Constitutional AI</li>
-          <li class="idea-item">Distributed Training</li>
-          <li class="idea-item">AI Safety Techniques</li>
-          <li class="idea-item">High-performance Infrastructure</li>
-        </ul>
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>Aspiring software engineer with a focus on AI, full-stack dev, and embedded systems. Skilled in C, C++, Python, PyTorch, and data science libraries. Passionate about using tech to solve real-world problems.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT SECTION -->
-<section id="contact" class="contact-form-section">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <form class="contact-form" action="mailto:mdmnaveed.5@gmail.com" method="POST" enctype="text/plain">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required/>
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>B.Tech. in Computer Science & Engineering</h3>
+        <p>KLE Technological University, Hubli</p>
+        <p>Expected Graduation: 2026</p>
+        <p>CGPA: 8.67</p>
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required/>
+      <div class="card">
+        <h3>Pre-University</h3>
+        <p>Vidya P. Hanchinmani PU College</p>
+        <p>2020 - 2022</p>
+        <p>87.66%</p>
       </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea name="message" id="message" rows="5" required></textarea>
+      <div class="card">
+        <h3>SSLC</h3>
+        <p>Pavan English Medium School</p>
+        <p>2020</p>
+        <p>93.76%</p>
       </div>
-      <button class="submit-btn" type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="social-links">
-      <a href="#" class="social-icon">in</a>
-      <a href="#" class="social-icon">gh</a>
-      <a href="#" class="social-icon">@</a>
     </div>
-    <p>mdmnaveed.5@gmail.com | +91-9483061865</p>
-    <p>© 2025 Mohammed Naveed. All rights reserved.</p>
-  </div>
-</footer>
+  </section>
 
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item" style="--progress: 90%">C</div>
+        <div class="skill-item" style="--progress: 85%">C++</div>
+        <div class="skill-item" style="--progress: 80%">Python</div>
+        <div class="skill-item" style="--progress: 85%">HTML</div>
+        <div class="skill-item" style="--progress: 80%">CSS</div>
+        <div class="skill-item" style="--progress: 75%">JavaScript</div>
+        <div class="skill-item" style="--progress: 70%">PyTorch</div>
+        <div class="skill-item" style="--progress: 85%">NumPy</div>
+        <div class="skill-item" style="--progress: 80%">Pandas</div>
+        <div class="skill-item" style="--progress: 75%">Matplotlib</div>
+        <div class="skill-item" style="--progress: 70%">Seaborn</div>
+        <div class="skill-item" style="--progress: 65%">Scikit-learn</div>
+        <div class="skill-item" style="--progress: 85%">Data Structures</div>
+        <div class="skill-item" style="--progress: 80%">Arduino</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Intrusion Detection for 5G</h3>
+          <p>Used LSTM + Attention and CatBoost for feature selection to detect intrusions in 5G networks with 94.03% accuracy.</p>
+          <p><strong>Tools:</strong> Python, PyTorch, CatBoost</p>
+        </div>
+        <div class="project-card">
+          <h3>Exercise Robot</h3>
+          <p>Developed a fitness robot using Arduino and servo motors, controlled via sensors and predefined exercise sequences.</p>
+          <p><strong>Tools:</strong> Arduino, C++, Servo Motors</p>
+        </div>
+        <div class="project-card">
+          <h3>Smart City Simulation</h3>
+          <p>Built a city management simulation using C and DSA. Handled smart traffic, parking, grid optimization using graph theory.</p>
+          <p><strong>Tools:</strong> C, Graph Theory, Data Structures</p>
+        </div>
+        <div class="project-card">
+          <h3>Spotify Clone</h3>
+          <p>Simulated Spotify app in C++ with login, playlist management, and music playback using file handling techniques.</p>
+          <p><strong>Tools:</strong> C++, OOP, File Handling</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="domain" class="domain-section">
+    <div class="container">
+      <h2>Chosen Domain</h2>
+      <div class="domain-card">
+        <h3 class="domain-title">🧠 Anthropic</h3>
+        
+        <div class="highlight-box">
+          <h4 class="highlight-title">What is Anthropic?</h4>
+          <p>Anthropic is a leading AI safety and research company focused on building reliable, interpretable, and steerable AI systems. Founded in 2021 by former OpenAI employees, it's known for its Claude language models.</p>
+        </div>
+
+        <div class="highlight-box">
+          <h4 class="highlight-title">Key Highlights</h4>
+          <ul class="idea-list">
+            <li class="idea-item">Focus on AI alignment and safety</li>
+            <li class="idea-item">Backed by Amazon ($4B investment) and Google</li>
+            <li class="idea-item">Creator of the Claude AI models</li>
+            <li class="idea-item">Strong emphasis on constitutional AI</li>
+            <li class="idea-item">Competes with OpenAI, Google DeepMind, and Cohere</li>
+          </ul>
+        </div>
+
+        <div class="highlight-box">
+          <h4 class="highlight-title">Technical Skills Required</h4>
+          <ul class="idea-list">
+            <li class="idea-item">Large Language Models (LLMs)</li>
+            <li class="idea-item">Prompt Engineering + Constitutional AI</li>
+            <li class="idea-item">Distributed Training</li>
+            <li class="idea-item">AI Safety Techniques</li>
+            <li class="idea-item">High-performance Infrastructure</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form class="contact-form" action="mailto:mdmnaveed.5@gmail.com" method="POST" enctype="text/plain">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="#" class="social-icon">LinkedIn</a>
+        <a href="#" class="social-icon">GitHub</a>
+        <a href="mailto:mdmnaveed.5@gmail.com" class="social-icon">Email</a>
+      </div>
+      <p>mdmnaveed.5@gmail.com | +91-9483061865</p>
+      <p>© 2025 Mohammed Naveed. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
