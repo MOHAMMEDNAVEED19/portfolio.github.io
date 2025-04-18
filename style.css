@@ -8,13 +8,14 @@
 /* Global Styles */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f9f9f9, #e9f0ea);
+  background: linear-gradient(135deg, #f0fdf4, #e0f2f1);
   color: #333;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
+  text-align: center;
 }
 
 /* Header */
@@ -22,22 +23,20 @@ header {
   background-color: #6BCB77;
   color: white;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
   width: 100%;
   max-width: 800px;
-  transition: all 0.3s ease-in-out;
+  margin-bottom: 30px;
 }
 
 header h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 0.5rem;
 }
 
 header p {
   font-size: 1.1rem;
-  opacity: 0.9;
 }
 
 /* Main Container */
@@ -47,19 +46,34 @@ section {
   width: 100%;
   max-width: 800px;
   border-radius: 12px;
-  margin-top: 30px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-  text-align: left;
-  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
 }
 
 /* Section Titles */
 h2 {
   color: #4CAF50;
   margin: 2rem 0 1rem;
-  font-size: 1.5rem;
-  border-bottom: 2px solid #e0f2e9;
-  padding-bottom: 0.3rem;
+  font-size: 1.6rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #4CAF50;
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
 }
 
 /* List Items */
@@ -102,9 +116,9 @@ dl dt {
 }
 
 dl dd {
-  margin-left: 1.5rem;
   color: #666;
   font-size: 0.95rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Blockquote */
@@ -116,19 +130,22 @@ blockquote {
   padding: 1rem;
   margin-top: 2rem;
   border-radius: 6px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-  header, section {
-    padding: 1.5rem;
-  }
-
   header h1 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
   }
 
   h2 {
     font-size: 1.3rem;
+  }
+
+  section, header {
+    padding: 1.5rem;
   }
 }
