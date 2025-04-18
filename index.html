@@ -1,203 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f5f5f5;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      animation: fadeIn 1s ease-in;
+    }
 
-        section {
-            background-color: white;
-            padding: 2rem;
-            width: 90%;
-            max-width: 800px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 30px;
-        }
+    section {
+      width: 90%;
+      max-width: 1200px;
+      margin-top: 30px;
+    }
 
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-        }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
 
-        header h1 {
-            font-size: 2rem;
-            margin: 0;
-        }
+    header h1 {
+      font-size: 2.2rem;
+    }
 
-        header p {
-            margin: 1rem 0 0;
-        }
+    header p {
+      margin-top: 1rem;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
 
-        h2 {
-            color: #4CAF50;
-            margin-bottom: 1rem;
-        }
+    h2 {
+      color: #4CAF50;
+      margin: 2rem 0 1rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 0 20px;
+    }
 
-        ul li {
-            background-color: #e7f7e7;
-            margin-bottom: 0.5rem;
-            padding: 0.75rem;
-            border-radius: 5px;
-            text-align: left;
-        }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
 
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    .card h3 {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
 
-        dl dt {
-            font-weight: bold;
-            color: #333;
-            margin-top: 1rem;
-        }
+    .card p {
+      color: #666;
+      line-height: 1.6;
+    }
 
-        dl dd {
-            margin-left: 1.5rem;
-            color: #666;
-        }
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #4CAF50;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
 
-        blockquote {
-            font-style: italic;
-            color: #555;
-            border-left: 4px solid #4CAF50;
-            padding-left: 1rem;
-            margin-top: 2rem;
-        }
+    .card a:hover {
+      color: #388e3c;
+      text-decoration: underline;
+    }
 
-        @media (max-width: 600px) {
-            section {
-                padding: 1.5rem;
-            }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 
-            header {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Hello, I'm Mohammed Naveed Ul Hasan M Mulla 👋</h1>
-        <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
-    </header>
+  <header>
+    <h1>Hello, I'm Mohammed Naveed Ul Hasan M Mulla 👋</h1>
+    <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
+  </header>
 
-    <section>
-        <h2>🛠️ Projects</h2>
-        <ul>
-            <li>
-                <strong>Intrusion Detection System for 5G Networks</strong>: 
-                Developed a high-accuracy IDS tailored for 5G networks using <strong>stacked LSTMs with attention mechanisms</strong>. Employed <strong>CatBoost</strong> for feature importance and reduction. The model detects intrusions across multiple traffic types, optimizing both performance and efficiency. Achieved an overall accuracy of <strong>94.03%</strong>.<br>
-                <em>(Tech Stack: Python, PyTorch, CatBoost)</em>
-            </li>
-            <li>
-                <strong>Exercise Robot for Demonstration Purpose</strong>: 
-                Created a real-time robotic system capable of mimicking human fitness routines using motion-controlled servo motors and Arduino-compatible sensors. Enabled wireless control and demonstration for presentations. Designed primarily for educational and exhibition purposes.<br>
-                <em>(Tech Stack: Arduino, C++, Servo Motors, Sensors)</em>
-            </li>
-            <li>
-                <strong>Smart City Optimization</strong>: 
-                Implemented smart traffic and emergency response systems using <strong>graph theory and DSA</strong>. Simulated scenarios involving optimized routing, parking allocation, and urban navigation. The project focuses on enhancing infrastructure scalability in smart cities.<br>
-                <em>(Tech Stack: C, Graphs, Trees, DSA)</em>
-            </li>
-            <li>
-                <strong>Spotify App Clone</strong>: 
-                Built a basic music streaming application in C++ mimicking core Spotify functionalities such as playlist management, login authentication, and file handling. Used <strong>object-oriented programming</strong> to maintain modularity and scalability.<br>
-                <em>(Tech Stack: C++, OOP, File Handling)</em>
-            </li>
-            <li>
-                <strong>Interactive Control System for Embedded Robotics</strong>: 
-                Developed embedded control software for real-time robotic interactions. Enabled interactive UI with sensor integration for movement demonstrations and gesture-based actions. This system was featured in tech expos for its intuitive design.<br>
-                <em>(Tech Stack: Arduino, Sensors, Embedded C)</em>
-            </li>
-            <li>
-                <strong>Algorithm Visualization Tools</strong>: 
-                Created educational tools to visually demonstrate <strong>sorting algorithms and graph traversals</strong> for improved understanding. These were particularly useful in DSA learning and for Smart City logic simulation.<br>
-                <em>(Tech Stack: C++, DSA, Graph Theory)</em>
-            </li>
-        </ul>
+  <section>
+    <h2>🛠️ Projects</h2>
+    <div class="project-cards">
+      <div class="card">
+        <h3>Intrusion Detection System for 5G Networks</h3>
+        <p>Developed an IDS using stacked LSTMs and attention mechanisms, achieving 94.03% accuracy. The project utilized CatBoost for feature reduction. <em>(Python, PyTorch, CatBoost)</em></p>
+        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Exercise Robot</h3>
+        <p>Built a robotic fitness demonstrator using Arduino and sensors, enabling real-time control and automation for fitness routines. <em>(Arduino, C++, Sensors)</em></p>
+        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Smart City Optimization</h3>
+        <p>Implemented urban infrastructure optimization using graph algorithms and data structures to enhance traffic, parking, and emergency systems. <em>(C, Graph Theory, DSA)</em></p>
+        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Spotify App Clone</h3>
+        <p>Created a C++-based music app clone that supports playlist management, user authentication, and file handling. <em>(C++, OOP)</em></p>
+        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Interactive Control System</h3>
+        <p>Designed an interactive control system for embedded robotics, using Arduino and sensor-based feedback for real-time robotic demos. <em>(Arduino, Embedded C)</em></p>
+        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Algorithm Visualization Tools</h3>
+        <p>Developed small tools to visualize sorting and graph algorithms for educational purposes. <em>(C++, DSA, Graph Theory)</em></p>
+        <a href="https://github.com/your-github-username" target="_blank">View Project</a>
+      </div>
+    </div>
 
-        <h2>🚀 Skills</h2>
-        <ul>
-            <li>Programming Languages: C, C++, Python, Basic CSS/JS/HTML</li>
-            <li>Frameworks and Libraries: NumPy, Pandas, Matplotlib, PyTorch, Scikit-learn, Seaborn</li>
-            <li>Data Structures and Algorithms</li>
-            <li>Web Development Basics</li>
-        </ul>
+    <h2>🚀 Skills</h2>
+    <ul>
+      <li>Programming Languages: C, C++, Python, Basic CSS/JS/HTML</li>
+      <li>Frameworks & Libraries: NumPy, Pandas, Matplotlib, PyTorch, Scikit-learn, Seaborn</li>
+      <li>Data Structures and Algorithms</li>
+      <li>Web Development Basics</li>
+    </ul>
 
-        <h2>🏆 Achievements</h2>
-        <ul>
-            <li><strong>First Place - Exercise Robot Demonstration Competition</strong>: Won first place at Avinya Shisyaru, KLE Tech. Skills showcased: Arduino Programming, Motion Control, Presentation.</li>
-        </ul>
+    <h2>🏆 Achievements</h2>
+    <ul>
+      <li><strong>First Place:</strong> Exercise Robot at Avinya Shisyaru, KLE Tech. Skills: Arduino Programming, Motion Control.</li>
+    </ul>
 
-        <h2>📚 Publications</h2>
-        <ul>
-            <li><strong>Intrusion Detection in 5G Networks</strong>: Accepted at CoaCoNS 2025 (Springer, SCOPUS-indexed CCIS series). Focused on attention with bias mechanisms and Gaussian noise augmentation.</li>
-        </ul>
+    <h2>📚 Publications</h2>
+    <ul>
+      <li><strong>Intrusion Detection in 5G Networks:</strong> Published in CoaCoNS 2025 (Springer CCIS). Focused on attention mechanisms with Gaussian noise augmentation.</li>
+    </ul>
 
-        <h2>🌐 Find Me Online</h2>
-        <ul>
-            <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
-        </ul>
+    <h2>🌐 Find Me Online</h2>
+    <ul>
+      <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
+    </ul>
 
-        <h2>Portfolio Topic</h2>
-        <dl>
-            <dt>Course Name</dt>
-            <dd>Algorithmic Problem Solving</dd>
+    <h2>📘 Portfolio Topic</h2>
+    <dl>
+      <dt>Course Name</dt>
+      <dd>Algorithmic Problem Solving</dd>
 
-            <dt>Course Code</dt>
-            <dd>Course Code Placeholder</dd>
+      <dt>Course Code</dt>
+      <dd>Course Code Placeholder</dd>
 
-            <dt>Name</dt>
-            <dd>Mohammed Naveed Ul Hasan M Mulla</dd>
+      <dt>Name</dt>
+      <dd>Mohammed Naveed Ul Hasan M Mulla</dd>
 
-            <dt>SRN</dt>
-            <dd>Your SRN</dd>
+      <dt>SRN</dt>
+      <dd>Your SRN</dd>
 
-            <dt>Course Instructor</dt>
-            <dd>Instructor Name Placeholder</dd>
+      <dt>Course Instructor</dt>
+      <dd>Instructor Name Placeholder</dd>
 
-            <dt>University</dt>
-            <dd>KLE Technological University, Hubli</dd>
+      <dt>University</dt>
+      <dd>KLE Technological University, Hubli</dd>
 
-            <dt>Portfolio Topic/Domain</dt>
-            <dd>Google</dd>
-        </dl>
+      <dt>Portfolio Topic/Domain</dt>
+      <dd>Google</dd>
+    </dl>
 
-        <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
-    </section>
+    <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
+  </section>
 </body>
 </html>
